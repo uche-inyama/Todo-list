@@ -1,6 +1,6 @@
 import Todo from './createProject';
-import store from '../storage';
-import { createHtmlElement, createHeader } from '../../utility';
+import store from './storage';
+import { createHtmlElement, createHeader } from '../utility';
 
 const createTask = (() => {
   const names = ['title', 'description', 'dueDate', 'priority', 'category'];
@@ -86,7 +86,7 @@ const createTask = (() => {
     document.querySelector('.active').classList.remove('active');
     document.getElementById(currentPage).classList.add('active');
 
-    import('../show').then(module => {
+    import('./show').then(module => {
       if (evt.target.classList.contains('createTodo')) {
         module.default.render(todo.toJson().category);
       }

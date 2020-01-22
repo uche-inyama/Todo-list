@@ -1,8 +1,7 @@
-import db from '../components/storage';
-import { Project } from './createComponent/createProject';
+import db from './storage';
+import { Project } from './createProject';
 import store from './storage';
 import { createHtmlElement, updateHtmlElement } from '../utility';
-import storage from '../components/storage';
 
 const rightPanel = createHtmlElement('div', { class: 'rightPanel' });
 const addProjectButton = createHtmlElement(
@@ -164,7 +163,7 @@ const updateProject = evt => {
 function navigation(evt) {
   const param = evt.target.dataset.name;
   evt.preventDefault();
-  import('./createComponent/createDom')
+  import('./createDom')
     .then(module => {
       const create = module.default;
       create.render(param);

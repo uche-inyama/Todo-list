@@ -1,7 +1,7 @@
-import store from './storage.js';
-import { createHtmlElement, getObjectFromForm } from '../utility';
-import Todo from '../components/createComponent/createProject';
-import { renderHome } from './Home';
+import store from './storage';
+import { createHtmlElement } from '../utility';
+import Todo from '../components/createProject';
+import { renderHome } from './home';
 
 const show = (() => {
   const root = document.querySelector('#root');
