@@ -47,16 +47,31 @@ const show = (() => {
         element.todos.forEach((todo, index) => {
           const containerTodo = document.createElement('div');
           containerTodo.classList.add('containerTodo');
-          const header5 = createHtmlElement('h5', {}, null, todo.title);
-          const descriptionDiv = createHtmlElement(
-            'p',
-            {},
-            null,
-            todo.description
-          );
-          const dateTimeDiv = createHtmlElement('div', {}, null, todo.dueDate);
-          const priorityDiv = createHtmlElement('div', {}, null, todo.priority);
-          const categoryDiv = createHtmlElement('div', {}, null, todo.category);
+
+          const header5 = document.createElement('h5');
+          const span1 = document.createElement('span');
+          span1.innerHTML = `Title: ${todo.title}`;
+          header5.appendChild(span1);
+
+          const descriptionDiv = document.createElement('p');
+          const span2 = document.createElement('span');
+          span2.innerHTML = `Description: ${todo.description}`;
+          descriptionDiv.appendChild(span2);
+
+          const dateTimeDiv = createHtmlElement('div', {}, null, null);
+          const span3 = document.createElement('span');
+          span3.innerHTML = `Due date: ${todo.dueDate}`;
+          dateTimeDiv.appendChild(span3);
+
+          const priorityDiv = createHtmlElement('div', {}, null, null);
+          const span4 = document.createElement('span');
+          span4.innerHTML = `Priority: ${todo.priority}`;
+          priorityDiv.appendChild(span4);
+
+          const categoryDiv = createHtmlElement('div', {}, null, null);
+          const span5 = document.createElement('span');
+          span5.innerHTML = `Category: ${todo.category}`;
+          categoryDiv.appendChild(span5);
 
           const deleteButton = createHtmlElement(
             'button',

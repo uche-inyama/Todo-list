@@ -143,7 +143,7 @@ root {
   display: none;
   background-color: blue;
   width: 40%;
-  height: auto;
+  min-height: 450px;
   position: absolute;
   z-index: 1;
 }
@@ -158,7 +158,7 @@ root {
 
 .container {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .form-wrapper {
@@ -171,6 +171,14 @@ root {
   height: 100%;
   padding: 100px;
 }
+
+.form-wrapper h2 {
+  font-size: 30px;
+  font-weight: 400;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
 .hide {
   display: none;
 }
@@ -181,9 +189,12 @@ form {
 }
 input,
 select {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   width: 250px;
   height: 40px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .createTodo {
@@ -191,10 +202,12 @@ select {
   padding: 10px;
   width: 100px;
   cursor: pointer;
+  font-size: 16px;
   text-align: center;
 }
 
 .projectForm {
+  margin-top: 10px;
   width: 200px;
   height: 50px;
 }
@@ -250,6 +263,11 @@ button:nth-child(4) {
 
 .containerDiv button {
   margin: 5px 0;
+}
+
+.containerDiv h1 {
+  padding: 20px;
+  text-transform: capitalize;
 }
 
 .containerTodo {
