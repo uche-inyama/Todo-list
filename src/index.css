@@ -136,6 +136,6 @@ button:nth-child(4) {
 }
 
 .showEditForm button,
-input {
+.showEditForm input {
   width: 200px;
 }
