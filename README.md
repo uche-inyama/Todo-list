@@ -1,6 +1,6 @@
 Todo-List, is an application designed to categorize your projects; within each each project, there are todos, each characterized by a title, description, duedate, priority and its category.
 
-This project was only designed with Javascript, which invovled dom creation and manipulation.
+This project was only designed with Javascript, which invovled **```dom creation and manipulation```**.
 
 #### Concepts practiced:
 
