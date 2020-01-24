@@ -1,11 +1,11 @@
 import uuid from 'uuid/v4';
 
 const Todo = (title, description, dueDate, priority, category) => {
-  const getTitle = () => title;
-  const getDescription = () => description;
-  const getDueDate = () => dueDate;
-  const getPriority = () => priority;
-  const getCategory = () => category;
+  // const getTitle = () => title;
+  // const getDescription = () => description;
+  // const getDueDate = () => dueDate;
+  // const getPriority = () => priority;
+  // const getCategory = () => category;
 
   function toJson() {
     return {
@@ -18,11 +18,11 @@ const Todo = (title, description, dueDate, priority, category) => {
   }
 
   return {
-    getTitle,
-    getDescription,
-    getDueDate,
-    getPriority,
-    getCategory,
+    title,
+    description,
+    dueDate,
+    priority,
+    category,
     toJson
   };
 };

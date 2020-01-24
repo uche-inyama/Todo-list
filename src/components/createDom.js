@@ -29,7 +29,7 @@ const createTask = (() => {
     dueDate.setAttribute('name', 'dueDate');
     dueDate.setAttribute('class', 'dueDate');
 
-    const priorityArr = ['select priority', 'urgent', 'Important', 'Normal'];
+    const priorityArr = ['urgent', 'Important', 'Normal'];
     select = document.createElement('select');
     select.setAttribute('name', 'select');
     select.setAttribute('class', 'select');
@@ -77,20 +77,25 @@ const createTask = (() => {
     const priority = form.querySelector('.select').value;
     const category = form.querySelector('.category').value;
 
+    if (!title || !description || !dueDate || !priority || !category) {
+      alert('Please check, a required field(s) are empty');
+    } else {
+      const todo = Todo(title, description, dueDate, priority, category);
+
+      store.addTodoItem(todo.toJson().category, todo.toJson());
+
+      let currentPage = evt.target.getAttribute('data-target');
+      document.querySelector('.active').classList.remove('active');
+      document.getElementById(currentPage).classList.add('active');
+
+      import('./show').then(module => {
+        if (evt.target.classList.contains('createTodo')) {
+          module.default.render(todo.toJson().category);
+        }
+      });
+    }
+
     // decoupling should be done here
-    const todo = Todo(title, description, dueDate, priority, category);
-
-    store.addTodoItem(todo.toJson().category, todo.toJson());
-
-    let currentPage = evt.target.getAttribute('data-target');
-    document.querySelector('.active').classList.remove('active');
-    document.getElementById(currentPage).classList.add('active');
-
-    import('./show').then(module => {
-      if (evt.target.classList.contains('createTodo')) {
-        module.default.render(todo.toJson().category);
-      }
-    });
   };
 
   return {

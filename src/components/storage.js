@@ -1,3 +1,5 @@
+import { Project, Todo } from './createProject';
+
 const storage = (() => {
   let store;
   const storeKey = 'todos-database';
@@ -6,22 +8,37 @@ const storage = (() => {
     store = window.localStorage.getItem(storeKey);
     if (!store) {
       store = [];
+      const obj = {
+        id: 'ab07eg9k-5790-5940-934f-93c4e1f37c32',
+        name: 'Default project',
+        todos: [
+          {
+            title: 'Final Exam preparation',
+            description: 'Exam for Chemistry Physics and Mathematics',
+            dueDate: '2020-04-20',
+            priority: 'urgent',
+            category: 'Default project'
+          }
+        ]
+      };
+      store.push(obj);
       window.localStorage.setItem(storeKey, JSON.stringify(store));
     }
-
     return store;
   };
 
-  const getProjects = () => JSON.parse(getStorage());
+  function getProjects() {
+    return JSON.parse(getStorage());
+  }
 
   /**
    * Insert a new project into the store
    * @param {Project} project
    */
-  const addProject = project => {
+  function addProject(project) {
     const projects = [project, ...getProjects()];
     window.localStorage.setItem(storeKey, JSON.stringify(projects));
-  };
+  }
 
   function getProjectById(id) {
     for (const project of getProjects()) {
