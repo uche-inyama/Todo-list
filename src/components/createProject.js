@@ -9,11 +9,11 @@ const Todo = (title, description, dueDate, priority, category) => {
 
   function toJson() {
     return {
-      title: getTitle(),
-      description: getDescription(),
-      dueDate: getDueDate(),
-      priority: getPriority(),
-      category: getCategory()
+      title: title,
+      description: description,
+      dueDate: dueDate,
+      priority: priority,
+      category: category
     };
   }
 

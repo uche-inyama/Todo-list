@@ -118,16 +118,13 @@ const show = (() => {
     const header2 = document.createElement('h2');
     header2.setAttribute('class', 'header2');
     header2.innerText = 'Update Todo';
-    const todo = store.getTodoItemById(projectId, index);
-
-    const names = {
-      title: todo.title,
-      description: todo.description,
-      dueDate: todo.dueDate,
-      priority: todo.priority,
-      checklist: todo.checklist,
-      category: todo.category
-    };
+    const {
+      title,
+      description,
+      dueDate,
+      priority,
+      category
+    } = store.getTodoItemById(projectId, index);
 
     const root = document.querySelector('#root');
     const row = createHtmlElement('div', { class: 'row', id: 'updateTodo' });
@@ -150,48 +147,48 @@ const show = (() => {
     container.append(wrapper);
     wrapper.append(header2, form);
 
-    const newNames = ['title', 'description'];
-    for (const name of newNames) {
-      const input = document.createElement('input');
-      input.setAttribute('type', 'text');
-      input.setAttribute('name', name);
-      input.setAttribute('placeholder', name);
-      input.setAttribute('class', name);
-      form.append(input);
+    for (const name of ['title', 'description']) {
+      const inputElement = document.createElement('input');
+      inputElement.setAttribute('type', 'text');
+      inputElement.setAttribute('name', name);
+      inputElement.setAttribute('placeholder', name);
+      inputElement.setAttribute('class', name);
+      inputElement.value = name === 'title' ? title : description;
+      form.append(inputElement);
     }
-    const dueDate = document.createElement('input');
-    dueDate.setAttribute('type', 'date');
-    dueDate.setAttribute('name', 'dueDate');
-    dueDate.setAttribute('class', 'dueDate');
+    const dueDateElement = document.createElement('input');
+    dueDateElement.setAttribute('type', 'date');
+    dueDateElement.setAttribute('name', 'dueDate');
+    dueDateElement.setAttribute('class', 'dueDate');
+    dueDateElement.value = dueDate;
 
     const priorityArr = ['urgent', 'Important', 'Normal'];
     const select = document.createElement('select');
     select.setAttribute('class', 'select');
-    for (const priority of priorityArr) {
+    for (const choice of priorityArr) {
       const option = document.createElement('option');
       option.setAttribute('type', 'text');
       option.setAttribute('name', 'select');
-      option.setAttribute('class', priority);
-      option.innerHTML = priority;
+      option.setAttribute('class', choice);
+      option.innerHTML = choice;
+      if (choice === priority) {
+        option.setAttribute('selected', 'selected');
+      }
+      option.value = choice;
       select.appendChild(option);
     }
 
-    const checkList = document.createElement('input');
-    checkList.setAttribute('type', 'checkbox');
-    checkList.setAttribute('name', 'checklist');
-    checkList.setAttribute('class', 'checklist');
+    const checkListElement = document.createElement('input');
+    checkListElement.setAttribute('type', 'checkbox');
+    checkListElement.setAttribute('name', 'checklist');
+    checkListElement.setAttribute('class', 'checklist');
 
-    const category = document.createElement('input');
-    category.setAttribute('type', 'text');
-    category.setAttribute('name', 'category');
-    category.setAttribute('class', 'category');
-
-    form.append(dueDate, select, category);
-
-    document.querySelector('.title').value = names.title;
-    document.querySelector('.description').value = names.description;
-    document.querySelector('.dueDate').value = names.dueDate;
-    document.querySelector('.category').value = names.category;
+    const categoryElement = document.createElement('input');
+    categoryElement.setAttribute('type', 'text');
+    categoryElement.setAttribute('name', 'category');
+    categoryElement.setAttribute('class', 'category');
+    categoryElement.value = category;
+    form.append(dueDateElement, select, categoryElement);
 
     form.append(btn);
 

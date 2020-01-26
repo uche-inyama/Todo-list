@@ -82,7 +82,7 @@ const createTask = (() => {
     } else {
       const todo = Todo(title, description, dueDate, priority, category);
 
-      store.addTodoItem(todo.toJson().category, todo.toJson());
+      store.addTodoItem(category, todo.toJson());
 
       let currentPage = evt.target.getAttribute('data-target');
       document.querySelector('.active').classList.remove('active');
@@ -90,7 +90,7 @@ const createTask = (() => {
 
       import('./show').then(module => {
         if (evt.target.classList.contains('createTodo')) {
-          module.default.render(todo.toJson().category);
+          module.default.render(category);
         }
       });
     }
