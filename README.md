@@ -16,6 +16,4 @@ This project was only designed with Javascript, which invovled **`dom creation a
   - Accessing the html file in the dist folder, then right click on it and choose a browser.
   - If you are using VS code, go to the bottom of the editor and click on Go Live to launch the application.
 
-#### Contributor.
 
-- Inyama, Uchechukwu
