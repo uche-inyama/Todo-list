@@ -8,7 +8,8 @@
     "dev": "webpack --mode development",
     "dev-watch": "webpack -w --mode development",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Inyama, Uchechukwu Henry",
   "license": "ISC",
@@ -40,6 +41,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "gh-pages": "^2.2.0",
     "uuid": "^3.3.3"
   }
 }
