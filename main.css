@@ -1,0 +1,299 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  border: 0;
+  border-image-width: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.row {
+  display: none;
+  background-color: blue;
+  width: 40%;
+  min-height: 300px;
+  position: absolute;
+  z-index: 1;
+}
+.row1 {
+  height: 80%;
+  width: 50%;
+}
+
+.active {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 100px;
+}
+
+.form-wrapper h2 {
+  font-size: 30px;
+  font-weight: 400;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+input,
+select {
+  margin-bottom: 10px;
+  width: 250px;
+  height: 40px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.createTodo {
+  border: solid white 1px;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.projectForm {
+  margin-top: 10px;
+  /* width: 200px;
+  height: 50px; */
+}
+.projectForm button {
+  width: 100px;
+  height: 30px;
+}
+
+.homeWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid gray 1px;
+  height: 100%;
+}
+
+.wrapper {
+  margin-top: 10px;
+  border: solid 0.5px gray;
+  border-radius: 3px;
+  width: 300px;
+}
+.wrapper button {
+  height: 30px;
+}
+.wrapper button:nth-child(2),
+button:nth-child(3),
+button:nth-child(4) {
+  margin-left: 4.2px;
+}
+
+.wrapper button:nth-child(1) {
+  width: 120px;
+}
+
+.createProject {
+  margin: auto 0 10px 0;
+  width: 100px;
+}
+
+.containerDiv button {
+  margin: 5px 0;
+}
+
+.containerDiv h1 {
+  padding: 20px;
+  text-transform: capitalize;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.containerTodo {
+  padding-left: 10px;
+  padding-top: 10px;
+  line-height: 1.4;
+  margin: 0 5px 10px 5px;
+  border: 1px solid gray;
+  border-radius: 1px;
+  background-color: gray;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.header3 {
+  margin-bottom: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.showEditForm {
+  padding-top: 15px;
+}
+
+.showEditForm button,
+.showEditForm input {
+  width: 200px;
+}
+
