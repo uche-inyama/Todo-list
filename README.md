@@ -8,6 +8,9 @@ This project was only designed with Javascript, which invovled **`dom creation a
 - Factory Functions
 - The Module Pattern
 
+Here's the [live link](https://uche-inyama.github.io/Todo-list/) of my project
+
+
 #### Take the following steps to work with this repository:
 
 - Clone the repository with the url **`git@github.com:uche-inyama/Todo-list.git`**
@@ -17,3 +20,7 @@ This project was only designed with Javascript, which invovled **`dom creation a
   - If you are using VS code, go to the bottom of the editor and click on Go Live to launch the application.
 
 
+#### Contributors
+
+- Inyama, Uchechukwu Henry
+- [IBTechRaj](https://github.com/IBTechRaj)
